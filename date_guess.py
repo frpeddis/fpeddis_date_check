@@ -13,7 +13,7 @@ import pandas as pd
 # Checkbox to toggle image display
 
 openai.api_key = st.secrets["API_KEY"]
-
+st.set_page_config(page_title="Day of the week - by fpeddis")
 def generate_news(selected_date):
     prompt = f"What happens on {selected_date}?\nGive me a good news simply with an initial 😄, a neutral news simply with an initial 😐, and a bad news simply with an initial 😔. Do not mention if it is good, neutral or bad news, just use the icons. Do not mention any date in your answer. jump a line forevery news. Insert related Wikipedia links."
 
