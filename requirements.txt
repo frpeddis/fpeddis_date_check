@@ -3,3 +3,6 @@ pandas
 numpy
 openai
 streamlit_lottie
+requests
+Pillow
+pandas
