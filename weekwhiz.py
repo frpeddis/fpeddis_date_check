@@ -128,10 +128,11 @@ if check_button:
         
 # Calculate time taken
 if not st.session_state.check_pressed:
-    time_taken = (datetime.now() - st.session_state.start_time).total_seconds()
+    st.session_state.start_time = datetime.now()
+    time_taken = 0
     display_time_taken = False
 else:
-    time_taken = st.session_state.time_taken
+    time_taken = (datetime.now() - st.session_state.start_time).total_seconds()
     display_time_taken = True
 
 # Show the amount of seconds taken
