@@ -38,6 +38,10 @@ show_images = st.checkbox("Show me how to calculate !")
 st.title(":sunglasses: What day is it?")
 st.session_state.check_pressed = False
 
+# Initialize start_time in session state
+if 'start_time' not in st.session_state:
+    st.session_state.start_time = datetime.now()
+
 # Add radio button to select between random date and specific date
 date_selection = st.radio("Select a date option:", ["Random Date", "Specific Date"])
 
@@ -128,11 +132,10 @@ if check_button:
         
 # Calculate time taken
 if not st.session_state.check_pressed:
-    st.session_state.start_time = datetime.now()
-    time_taken = 0
+    time_taken = (datetime.now() - st.session_state.start_time).total_seconds()
     display_time_taken = False
 else:
-    time_taken = (datetime.now() - st.session_state.start_time).total_seconds()
+    time_taken = st.session_state.time_taken
     display_time_taken = True
 
 # Show the amount of seconds taken
