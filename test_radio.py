@@ -46,34 +46,96 @@ if show_images:
         st.image(img, use_column_width=True)
 
 
-# Function to calculate a random date
-def calculate_random_date():
-    start_date = datetime(1582, 10, 15)
-    end_date = datetime(2099, 12, 31)
-    return start_date + timedelta(seconds=random.randint(0, int((end_date - start_date).total_seconds())))
+import streamlit as st
+import random
+import calendar
+from datetime import datetime, timedelta
 
-# Check if random_date and start_time are in session state, if not, calculate and store them
-if 'random_date' not in st.session_state:
-    st.session_state.random_date = calculate_random_date()
-    
+# Use st.sidebar.radio to create a radio button for selecting the date type
+date_type = st.sidebar.radio("Select date type:", ("Random Date", "Specific Date"))
 
-if 'start_time' not in st.session_state:
-    st.session_state.start_time = datetime.now()
+if date_type == "Random Date":
+    # Part 1 code
+    def calculate_random_date():
+        start_date = datetime(1582, 10, 15)
+        end_date = datetime(2099, 12, 31)
+        return start_date + timedelta(seconds=random.randint(0, int((end_date - start_date).total_seconds())))
 
-if 'check_pressed' not in st.session_state:
-    st.session_state.check_pressed = False
+    if 'random_date' not in st.session_state:
+        st.session_state.random_date = calculate_random_date()
 
-if 'time_taken' not in st.session_state:
-    st.session_state.time_taken = 0
+    if 'start_time' not in st.session_state:
+        st.session_state.start_time = datetime.now()
 
-# Display the date in the format dd-mmm-yyyy
-description = "**Random Date:**"
-value = "**" + st.session_state.random_date.strftime("%d-%b-%Y") + "**"
-st.markdown(f"{description} {value}")
-#st.write("**Random Date:**", st.session_state.random_date.strftime("%d-%b-%Y"))
-selected_date = st.session_state.random_date.strftime("%d-%b-%Y")
-#com.iframe("https://lottie.host/?file=380d3ff9-0c30-4a96-b25b-7eeb8868bfeb/vnvhMZFQ8j.json")
+    if 'check_pressed' not in st.session_state:
+        st.session_state.check_pressed = False
 
+    if 'time_taken' not in st.session_state:
+        st.session_state.time_taken = 0
+
+    description = "**Random Date:**"
+    value = "**" + st.session_state.random_date.strftime("%d-%b-%Y") + "**"
+    st.markdown(f"{description} {value}")
+
+    selected_date = st.session_state.random_date.strftime("%d-%b-%Y")
+
+    if not st.session_state.check_pressed:
+        time_taken = (datetime.now() - st.session_state.start_time).total_seconds()
+        display_time_taken = False
+    else:
+        time_taken = st.session_state.time_taken
+        display_time_taken = True
+
+    selected_day_of_week = st.selectbox("Select the day of the week:", list(calendar.day_name))
+    check_button = st.button("Check")
+
+    if check_button:
+        st.session_state.check_pressed = True
+        day_of_week = calendar.day_name[st.session_state.random_date.weekday()]
+
+        if selected_day_of_week == day_of_week:
+            st.balloons()
+            st.success(day_of_week + " is OK! :thumbsup:")
+        else:
+            st.error(day_of_week + " is the right day! :coffee:")
+
+else:
+    # Part 2 code
+    col1, col2, col3 = st.columns(3)
+
+    selected_year = col1.number_input("Year:", min_value=1582, max_value=2099, value=2023)
+    selected_month = col2.number_input("Month:", min_value=1, max_value=12, value=8)
+    selected_day = col3.number_input("Day:", min_value=1, max_value=31, value=12)
+
+    invalid_date = False
+
+    if selected_month in [4, 6, 9, 11] and selected_day == 31:
+        invalid_date = True
+    elif selected_month == 2:
+        if (selected_year % 4 == 0 and selected_year % 100 != 0) or (selected_year % 400 == 0):
+            max_days = 29  # Leap year
+        else:
+            max_days = 28  # Non-leap year
+        if selected_day > max_days:
+            invalid_date = True
+    elif selected_day > 31:
+        invalid_date = True
+
+    if not invalid_date:
+        selected_date = datetime(selected_year, selected_month, selected_day)
+        st.markdown(f"**Selected Date:** {selected_date.strftime('%d-%b-%Y')}", unsafe_allow_html=True)
+        day_of_week = calendar.day_name[selected_date.weekday()]
+    else:
+        st.markdown("<font color='red'>Invalid date</font>", unsafe_allow_html=True)
+
+    expected_day_of_week = st.selectbox("Select the expected day of the week:", list(calendar.day_name))
+    check_button = st.button("Check")
+
+    if check_button and not invalid_date:
+        if day_of_week == expected_day_of_week:
+            st.success(day_of_week + " OK! :thumbsup:")
+        else:
+            st.error(day_of_week + " WRONG!!!")
 
 # Calculate time taken
 if not st.session_state.check_pressed:
