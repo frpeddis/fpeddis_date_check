@@ -108,9 +108,9 @@ if check_button:
         selected_date = st.session_state.random_date
         
         if selected_date:
-            description2 = "All you need is hidden here: focus on "
+            description2 = "Focus on "
             st.markdown(f"{description2} {value}")
-            #st.write("Focus on the date ", selected_date.strftime("%d-%b-%Y"))
+           
 
             # Step 2: Take the last 2 digits of the year
             year_last_2_digits = selected_date.year % 100
