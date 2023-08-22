@@ -369,8 +369,7 @@ def execute_second_file_content():
     # Radio buttons to choose which code block to execute
     choice = st.radio(
         "Choose which code block to execute:",
-        ('First file content', 'Second file content')
-    )
+        ('First file content', 'Second file content'))
 
 # Execute the selected code block
 execute_choice(choice)
