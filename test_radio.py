@@ -51,46 +51,39 @@ import random
 import calendar
 from datetime import datetime, timedelta
 
-# Use st.sidebar.radio to create a radio button for selecting the date type
-date_type = st.sidebar.radio("Select date type:", ("Random Date", "Specific Date"))
+def calculate_random_date():
+    start_date = datetime(1582, 10, 15)
+    end_date = datetime(2099, 12, 31)
+    return start_date + timedelta(seconds=random.randint(0, int((end_date - start_date).total_seconds())))
 
-if date_type == "Random Date":
-    # Part 1 code
-    def calculate_random_date():
-        start_date = datetime(1582, 10, 15)
-        end_date = datetime(2099, 12, 31)
-        return start_date + timedelta(seconds=random.randint(0, int((end_date - start_date).total_seconds())))
+def main():
+    st.title("Date Day Checker")
+    option = st.radio("Choose an option:", ["Generate Random Date", "Select Specific Date"])
 
+    if option == "Generate Random Date":
+        random_date_logic()
+    else:
+        specific_date_logic()
+
+def random_date_logic():
     if 'random_date' not in st.session_state:
         st.session_state.random_date = calculate_random_date()
 
     if 'start_time' not in st.session_state:
         st.session_state.start_time = datetime.now()
 
-    if 'check_pressed_random' not in st.session_state:
-        st.session_state.check_pressed_random = False
-
-    if 'time_taken' not in st.session_state:
-        st.session_state.time_taken = 0
+    if 'check_pressed' not in st.session_state:
+        st.session_state.check_pressed = False
 
     description = "**Random Date:**"
     value = "**" + st.session_state.random_date.strftime("%d-%b-%Y") + "**"
     st.markdown(f"{description} {value}")
 
-    selected_date = st.session_state.random_date.strftime("%d-%b-%Y")
-
-    if not st.session_state.check_pressed_random:
-        time_taken = (datetime.now() - st.session_state.start_time).total_seconds()
-        display_time_taken = False
-    else:
-        time_taken = st.session_state.time_taken
-        display_time_taken = True
-
     selected_day_of_week = st.selectbox("Select the day of the week:", list(calendar.day_name))
-    check_button_random = st.button("Check Random")
+    check_button = st.button("Check")
 
-    if check_button_random:
-        st.session_state.check_pressed_random = True
+    if check_button:
+        st.session_state.check_pressed = True
         day_of_week = calendar.day_name[st.session_state.random_date.weekday()]
 
         if selected_day_of_week == day_of_week:
@@ -99,8 +92,7 @@ if date_type == "Random Date":
         else:
             st.error(day_of_week + " is the right day! :coffee:")
 
-else:
-    # Part 2 code
+def specific_date_logic():
     col1, col2, col3 = st.columns(3)
 
     selected_year = col1.number_input("Year:", min_value=1582, max_value=2099, value=2023)
@@ -113,9 +105,9 @@ else:
         invalid_date = True
     elif selected_month == 2:
         if (selected_year % 4 == 0 and selected_year % 100 != 0) or (selected_year % 400 == 0):
-            max_days = 29  # Leap year
+            max_days = 29
         else:
-            max_days = 28  # Non-leap year
+            max_days = 28
         if selected_day > max_days:
             invalid_date = True
     elif selected_day > 31:
@@ -129,13 +121,16 @@ else:
         st.markdown("<font color='red'>Invalid date</font>", unsafe_allow_html=True)
 
     expected_day_of_week = st.selectbox("Select the expected day of the week:", list(calendar.day_name))
-    check_button_specific = st.button("Check Specific")
+    check_button = st.button("Check")
 
-    if check_button_specific and not invalid_date:
+    if check_button and not invalid_date:
         if day_of_week == expected_day_of_week:
             st.success(day_of_week + " OK! :thumbsup:")
         else:
             st.error(day_of_week + " WRONG!!!")
+
+if __name__ == "__main__":
+    main()
 
 # Calculate time taken
 if not st.session_state.check_pressed:
