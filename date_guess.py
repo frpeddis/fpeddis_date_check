@@ -160,7 +160,7 @@ if check_button:
             st.write(year_divided_by_4, ": YY divided by 4 (only integer part!)")
             
             # Step 4: Add the "Century Correction" (continued)
-            st.write(century_correction_value, ": Century Correction (little table below)")
+            st.write(century_correction_value, ": Century Correction ", century, " (little table below)")
           
             # Step 5: Add the "Month Coefficient" (continued)
             st.write(month_coefficient, ": Month Coefficient (little table below)")
