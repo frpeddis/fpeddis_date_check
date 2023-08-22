@@ -155,13 +155,13 @@ if check_button:
             st.write(year_last_2_digits, ": Last 2 digits of the year YY")
         
             # Step 3: Divide the year number by 4 and add it (continued)
-            st.write(year_divided_by_4, ": Integer part of year YY divided by 4")
+            st.write(year_divided_by_4, ": YY divided by 4 (only integer part! forget decimals)")
             
             # Step 4: Add the "Century Correction" (continued)
-            st.write(century_correction_value, ": Century Correction")
+            st.write(century_correction_value, ": Century Correction (always the same for each century)")
           
             # Step 5: Add the "Month Coefficient" (continued)
-            st.write(month_coefficient, ": Month Coefficient")
+            st.write(month_coefficient, ": Month Coefficient (little table to memorize)")
         
             # Step 6: Add the day of the month (continued)
             st.write(day_of_month, ": Day of the month")
