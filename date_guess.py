@@ -152,7 +152,7 @@ if check_button:
             
             
             # Step 2: Take the last 2 digits of the year (continued)
-            st.write(year_last_2_digits, ": Last 2 digits of the year")
+            st.write(year_last_2_digits, ": Last 2 digits of the year YY")
         
             # Step 3: Divide the year number by 4 and add it (continued)
             st.write(year_divided_by_4, ": Integer part of year YY divided by 4")
