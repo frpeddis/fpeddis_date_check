@@ -109,7 +109,7 @@ if check_button:
         
         if selected_date:
             st.write("That's why: consider the date ", selected_date.strftime("%d-%b-%Y"))
-        
+            st.write("Consider the date ", f"‹span style='font-size:18px; font-weight:bold; '>{selected_date}</span›", unsafe_allow_html=True)
             # Step 2: Take the last 2 digits of the year
             year_last_2_digits = selected_date.year % 100
         
