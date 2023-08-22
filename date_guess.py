@@ -108,8 +108,7 @@ if check_button:
         selected_date = st.session_state.random_date
         
         if selected_date:
-            description2 = "Focus on :"
-            #value2 = "**" + st.session_state.random_date.strftime("%d-%b-%Y") + "**"
+            description2 = "All you need is hidden here: focus on "
             st.markdown(f"{description2} {value}")
             #st.write("Focus on the date ", selected_date.strftime("%d-%b-%Y"))
 
