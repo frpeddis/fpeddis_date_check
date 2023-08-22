@@ -67,8 +67,8 @@ if date_type == "Random Date":
     if 'start_time' not in st.session_state:
         st.session_state.start_time = datetime.now()
 
-    if 'check_pressed' not in st.session_state:
-        st.session_state.check_pressed = False
+    if 'check_pressed_random' not in st.session_state:
+        st.session_state.check_pressed_random = False
 
     if 'time_taken' not in st.session_state:
         st.session_state.time_taken = 0
@@ -79,7 +79,7 @@ if date_type == "Random Date":
 
     selected_date = st.session_state.random_date.strftime("%d-%b-%Y")
 
-    if not st.session_state.check_pressed:
+    if not st.session_state.check_pressed_random:
         time_taken = (datetime.now() - st.session_state.start_time).total_seconds()
         display_time_taken = False
     else:
@@ -87,10 +87,10 @@ if date_type == "Random Date":
         display_time_taken = True
 
     selected_day_of_week = st.selectbox("Select the day of the week:", list(calendar.day_name))
-    check_button = st.button("Check")
+    check_button_random = st.button("Check Random")
 
-    if check_button:
-        st.session_state.check_pressed = True
+    if check_button_random:
+        st.session_state.check_pressed_random = True
         day_of_week = calendar.day_name[st.session_state.random_date.weekday()]
 
         if selected_day_of_week == day_of_week:
@@ -129,9 +129,9 @@ else:
         st.markdown("<font color='red'>Invalid date</font>", unsafe_allow_html=True)
 
     expected_day_of_week = st.selectbox("Select the expected day of the week:", list(calendar.day_name))
-    check_button = st.button("Check")
+    check_button_specific = st.button("Check Specific")
 
-    if check_button and not invalid_date:
+    if check_button_specific and not invalid_date:
         if day_of_week == expected_day_of_week:
             st.success(day_of_week + " OK! :thumbsup:")
         else:
