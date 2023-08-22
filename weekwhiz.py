@@ -163,7 +163,7 @@ if check_button:
             st.write(century_correction_value, ": Century Correction for ", century, " (little table below)")
           
             # Step 5: Add the "Month Coefficient" (continued)
-            st.write(month_coefficient, ": Month Coefficient (little table below)")
+            st.write(month_coefficient, ": Month Coefficient for ", month, " (little table below)")
         
             # Step 6: Add the day of the month (continued)
             st.write(day_of_month, ": Day of the month")
