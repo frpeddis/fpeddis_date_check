@@ -119,7 +119,7 @@ if check_button:
                 ("is", ""),
                 " some ",
                 ("annotated", ""),
-                ("text", "noun"
+                ("text", "noun")
             )
 
 
