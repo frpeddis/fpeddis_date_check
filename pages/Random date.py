@@ -11,22 +11,7 @@ from io import BytesIO
 import pandas as pd
 from annotated_text import annotated_text
 
-annotated_text(
-    "This ",
-    ("is", ""),
-    " some ",
-    ("annotated", ""),
-    ("text", "noun"
-)
 
-
-annotated_text(
-    "That ",
-    ("is", ""),
-    " some ",
-    ("other", ""),
-    ("text", "noun"
-)
 
 # Checkbox to toggle image display
 
@@ -128,6 +113,17 @@ if check_button:
         if selected_date:
             description2 = "Focus on "
             st.markdown(f"{description2} {value}")
+
+            annotated_text(
+                "This ",
+                ("is", ""),
+                " some ",
+                ("annotated", ""),
+                ("text", "noun"
+            )
+
+
+
            
 
             # Step 2: Take the last 2 digits of the year
