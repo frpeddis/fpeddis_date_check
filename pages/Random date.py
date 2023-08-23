@@ -112,7 +112,7 @@ if check_button:
         
         if selected_date:
             description2 = "Focus on "
-            st.markdown(f"{description2} {value}")
+            st.subheader(f"{description2} {value}")
 
             annotated_text(
                 "This ",
