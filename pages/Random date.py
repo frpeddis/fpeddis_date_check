@@ -127,7 +127,7 @@ if check_button:
             st.markdown("""
             <style>
             .big-font {
-                font-size:260px !important;
+                font-size:26px !important;
             }
             </style>
             """, unsafe_allow_html=True)
