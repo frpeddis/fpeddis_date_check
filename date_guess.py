@@ -16,7 +16,7 @@ annotated_text(
     ("is", ""),
     " some ",
     ("annotated", ""),
-    ("text", "noun"
+    ("text", "noun")
 )
 
 
@@ -25,7 +25,7 @@ annotated_text(
     ("is", ""),
     " some ",
     ("other", ""),
-    ("text", "noun"
+    ("text", "noun")
 )
 
 # Checkbox to toggle image display
