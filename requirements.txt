@@ -6,4 +6,4 @@ streamlit_lottie
 requests
 Pillow
 pandas
-annotated-text
+annotated_text
