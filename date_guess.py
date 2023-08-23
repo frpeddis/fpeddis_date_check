@@ -11,22 +11,6 @@ from io import BytesIO
 import pandas as pd
 from annotated_text import annotated_text
 
-annotated_text(
-    "This ",
-    ("is", ""),
-    " some ",
-    ("annotated", ""),
-    ("text", "noun")
-)
-
-
-annotated_text(
-    "That ",
-    ("is", ""),
-    " some ",
-    ("other", ""),
-    ("text", "noun")
-)
 
 # Checkbox to toggle image display
 
