@@ -172,7 +172,7 @@ if check_button:
             remainder = subtotal % 7
         
             # Display calculated string
-            calculated_string = f"**:green[{year_last_2_digits}]** + {year_divided_by_4} + {century_correction_value} + {month_coefficient} + {day_of_month}"
+            calculated_string = f"**:green[{year_last_2_digits}]** + **:green[{year_divided_by_4}]** + **:green[{century_correction_value}]** + **:green[{month_coefficient}]** + **:green[{day_of_month}]**"
             st.write(":point_right: Magic Sum: ", calculated_string, " = ", f"<span style='font-size:18px; font-weight:bold;'>{subtotal}</span>", unsafe_allow_html=True)
             #st.markdown(":point_right: Magic Sum: ", calculated_string, " = ", f"<span style='font-size:18px; font-weight:bold;'>{subtotal}</span>", unsafe_allow_html=True)
 
