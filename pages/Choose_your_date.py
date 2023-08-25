@@ -1,3 +1,87 @@
+import random
+import calendar
+import streamlit as st
+from datetime import datetime, timedelta
+import openai
+import time
+import streamlit.components.v1 as com
+import requests
+from PIL import Image
+from io import BytesIO
+import pandas as pd
+
+openai.api_key = st.secrets["API_KEY"]
+st.set_page_config(page_title="🌀 WeekDay Whiz")
+
+def generate_news(selected_date):
+    prompt = f"What happened on {selected_date}?\nGive me a good news with a 😄, a neutral news with a 😐, and a bad news with a 😔. Do not mention good, neutral or bad news, just use the icons. Do not repeat the selected date in the answer. Insert related Wikipedia links."
+
+    response = openai.Completion.create(
+        engine="text-davinci-003",
+        prompt=prompt,
+        max_tokens=150,
+        temperature=0.7
+    )
+
+    return response.choices[0].text.strip()
+
+# Apply custom CSS for dark theme
+st.markdown(
+    """
+    <style>
+    body {
+        background-color: black;
+        color: white;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
+# Streamlit app title
+st.title(":sunglasses: What day is it? -  Choose a date 🔍")
+show_images = st.checkbox("Show me how to calculate !")
+
+if show_images:
+    image_links = [
+        "https://raw.githubusercontent.com/frpeddis/TestApp1/1ce97d47cedac010c814496ef6e34773a748cff6/MAGIC%20DAY%20CALCULATOR_1.jpeg",
+        "https://raw.githubusercontent.com/frpeddis/TestApp1/1ce97d47cedac010c814496ef6e34773a748cff6/MAGIC%20DAY%20CALCULATOR_2.jpeg",
+        "https://raw.githubusercontent.com/frpeddis/TestApp1/1ce97d47cedac010c814496ef6e34773a748cff6/MAGIC%20DAY%20CALCULATOR_3.jpeg",
+        "https://raw.githubusercontent.com/frpeddis/TestApp1/1ce97d47cedac010c814496ef6e34773a748cff6/MAGIC%20DAY%20CALCULATOR_4.jpeg"    ]
+    
+    for i, link in enumerate(image_links):
+        response = requests.get(link)
+        img = Image.open(BytesIO(response.content))
+        st.image(img, use_column_width=True)
+
+
+# Use st.columns to create a layout with three columns
+col1, col2, col3 = st.columns(3)
+
+# Get user input for year, month, and day
+with col1:
+    selected_year = st.number_input("Year:", min_value=1582, max_value=2099, value=2023)
+
+with col2:
+    selected_month = st.number_input("Month:", min_value=1, max_value=12, value=8)
+
+with col3:
+    selected_day = st.number_input("Day:", min_value=1, max_value=31, value=12)
+
+# Check for consistency among months and days
+invalid_date = False
+
+if selected_month in [4, 6, 9, 11] and selected_day == 31:
+    invalid_date = True
+elif selected_month == 2:
+    if (selected_year % 4 == 0 and selected_year % 100 != 0) or (selected_year % 400 == 0):
+        max_days = 29  # Leap year
+    else:
+        max_days = 28  # Non-leap year
+    if selected_day > max_days:
+        invalid_date = True
+elif selected_day > 31:
+    invalid_date = True
 
 # Create a datetime object based on user input
 if not invalid_date:
