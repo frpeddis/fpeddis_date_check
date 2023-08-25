@@ -1,7 +1,7 @@
 #Author: Francesco Peddis with ChatGPT
 
 import streamlit as st
-
+import streamlit.components.v1 as com
 
 
 st.set_page_config(page_title="🌀 Guess the Weekday!")
