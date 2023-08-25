@@ -6,7 +6,7 @@ import streamlit.components.v1 as com
 
 st.set_page_config(page_title="🌀 Guess the Weekday!")
 
-st.write("↖️ Your Calendar Challenge on the upper left sidebar")
+st.subheader("↖️ Your Calendar Challenge on the upper left sidebar")
 
 st.title("Welcome!!!  :sunglasses:")
 st.header("🗓️ Guess the **weekday** for **any date!**")
@@ -14,7 +14,7 @@ st.header("🗓️ Guess the **weekday** for **any date!**")
 com.iframe("https://lottie.host/?file=5a47a9d0-e7b0-492a-a32c-dd53d0fbfd5b/NaMYqV899B.json")
 
 
-st.write("You just need simple basic math and a little bit of memory... ") 
+st.subheader("With a little practice you can calculate it in your head... ") 
 st.write("Let's give it a try!")
 
 
