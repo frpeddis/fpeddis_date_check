@@ -9,14 +9,11 @@ import requests
 from PIL import Image
 from io import BytesIO
 import pandas as pd
-from annotated_text import annotated_text
-
-
 
 # Checkbox to toggle image display
 
 openai.api_key = st.secrets["API_KEY"]
-st.set_page_config(page_title="🌀 Week Whiz - F Peddis")
+st.set_page_config(page_title="🌀 WeekDay Whiz")
 
 def generate_news(selected_date):
     prompt = f"What happens on {selected_date}?\nGive me a good news simply with an initial 😄, a neutral news simply with an initial 😐, and a bad news simply with an initial 😔. Do not mention if it is good, neutral or bad news, just use the icons. Do not mention any date in your answer. jump a line forevery news. Insert related Wikipedia links."
@@ -33,8 +30,8 @@ def generate_news(selected_date):
 
 
 # Streamlit app title
-st.title(":sunglasses: What day is it?")
-show_images = st.checkbox("Show me how to calculate !")
+st.title(":sunglasses: What day is it? Random date 🎲")
+show_images = st.checkbox("Show me how to calculate ! ")
 
 if show_images:
     image_links = [
@@ -105,7 +102,7 @@ if check_button:
         st.success(day_of_week + " is OK! :thumbsup:")
                 
     else:
-        st.error(day_of_week + " is the right day! :coffee: Try again...")
+        st.error(day_of_week + " is the right day! :coffee: That's why...")
         com.iframe("https://lottie.host/?file=380d3ff9-0c30-4a96-b25b-7eeb8868bfeb/vnvhMZFQ8j.json")
                 # Step 1: User selects a date
         selected_date = st.session_state.random_date
@@ -113,27 +110,6 @@ if check_button:
         if selected_date:
             description2 = "Focus on "
             st.markdown(f"{description2} {value}")
-
-            annotated_text(
-                "This ",
-                ("is", ""),
-                " some ",
-                ("annotated", ""),
-                ("text", "noun")
-            )
-
-            #st.set_page_config(layout="wide")
-
-            st.markdown("""
-            <style>
-            .big-font {
-                font-size:26px !important;
-            }
-            </style>
-            """, unsafe_allow_html=True)
-            
-            st.markdown('<p class="big-font">Hello World !!</p>', unsafe_allow_html=True)
-
            
 
             # Step 2: Take the last 2 digits of the year
@@ -173,9 +149,10 @@ if check_button:
         
             # Display calculated string
             calculated_string = f"**:green[{year_last_2_digits}]** + **:green[{year_divided_by_4}]** + **:green[{century_correction_value}]** + **:green[{month_coefficient}]** + **:green[{day_of_month}]**"
-            st.write(":point_right: Magic Sum: ", calculated_string, " = ", f"<span style='font-size:22px; font-weight:bold;'>{subtotal}</span>", unsafe_allow_html=True)
-            #st.markdown(":point_right: Magic Sum: ", calculated_string, " = ", f"<span style='font-size:18px; font-weight:bold;'>{subtotal}</span>", unsafe_allow_html=True)
-
+            st.write(":point_right: Magic Sum: ", calculated_string, " = ", f"<span style='font-size:18px; font-weight:bold;'>{subtotal}</span>", unsafe_allow_html=True)
+            
+            #calculated_string = f"{year_last_2_digits} + {year_divided_by_4} + {century_correction_value} + {month_coefficient} + {day_of_month}"
+            #st.write(":point_right: Magic Sum: ", calculated_string, " = ", f"<span style='font-size:18px; font-weight:bold;'>{subtotal}</span>", unsafe_allow_html=True)
             #st.write("Magic Sum: ", calculated_string, " = ", subtotal)
             
             
@@ -183,10 +160,10 @@ if check_button:
             st.write(year_last_2_digits, ": Last 2 digits of the year YY")
         
             # Step 3: Divide the year number by 4 and add it (continued)
-            st.write(year_divided_by_4, ": YY divided by 4 (only integer part!)")
+            st.write(year_divided_by_4, ": Last 2 digit of the year YY/4 (only integer part!)")
             
             # Step 4: Add the "Century Correction" (continued)
-            st.write(century_correction_value, ": Century Correction for ", century, " (little table below)")
+            st.write(century_correction_value, ": Correction for century ", century, " (little table below)")
           
             # Step 5: Add the "Month Coefficient" (continued)
             st.write(month_coefficient, ": Month Coefficient for ", month, " (little table below)")
@@ -196,7 +173,7 @@ if check_button:
             
             # Step 7: Divide the subtotal by 7 and find the remainder (continued)
             #st.write(":point_right: Remainder after dividing ", subtotal, "  by 7:", remainder)
-            st.write(":point_right: Remainder after dividing ", subtotal, "  by 7:", f"<span style='font-size:18px; font-weight:bold;'>{remainder}</span>", unsafe_allow_html=True)
+            st.write(":point_right: Remainder after dividing the Magic Sum ", subtotal, "  by 7 ---> ", f"<span style='font-size:18px; font-weight:bold;'>{remainder}</span>", unsafe_allow_html=True)
             
             # Display Correspondence Table
             #st.write("Correspondence between Remainders and Days of the Week Table:")
@@ -262,5 +239,5 @@ if display_time_taken:
 
     if st.button("In that period..."):
             news_summary = generate_news(selected_date)
-            st.header("Please verify, but according to ChatGPT in that period... ")
+            st.header("Beware of hallucinations, but according to Chatgpt at that time...")
             st.write(news_summary)
