@@ -178,35 +178,44 @@ if check_button:
                 t.markdown("## %s" % text2[0:i])
                 time.sleep(0.01)
             
-            yltd = f"**:green[{year_last_2_digits}]**"
-            
-            
+            yl2d = f"**:green[{year_last_2_digits}]**"
+            ydb4 = f"**:green[{year_divided_by_4}]**""
+
+            ccv = f"**:green[{century_correction_value}]**"
+            mcv = f"**:green[{month_coefficient}]**"
+            dom = f"**:green[{day_of_month}]**"
+            sbt = f"**:blue[{subtotal}]**"
+            ctr = f"**green[{century}]**"
+            rst = f"**green[{reminder}]**"
             
             # Step 2: Take the last 2 digits of the year (continued)
             time.sleep(3)
-            st.write(year_last_2_digits, ": Last 2 digits of the year YY")
-            st.write(yltd, ": Last 2 digits of the year YY")
+            #st.write(year_last_2_digits, ": Last 2 digits of the year YY")
+            st.write(yl2d, ": Last 2 digits of the year YY")
         
             # Step 3: Divide the year number by 4 and add it (continued)
             time.sleep(3)
-            st.write(year_divided_by_4, ": Last 2 digit of the year YY/4 (only integer part!)")
-            
+            #st.write(year_divided_by_4, ": Last 2 digit of the year YY/4 (only integer part!)")
+            st.write(ydb4, ": Last 2 digit of the year YY/4 (only integer part!)")            
             # Step 4: Add the "Century Correction" (continued)
             time.sleep(3)
-            st.write(century_correction_value, ": Correction for century ", century, " (little table below)")
-          
+            #st.write(century_correction_value, ": Correction for century ", century, " (little table below)")
+            st.write(ccv, ": Correction for century ", ctr, " (little table below)")
             # Step 5: Add the "Month Coefficient" (continued)
             time.sleep(3)
-            st.write(month_coefficient, ": Month Coefficient for ", month, " (little table below)")
+            #st.write(month_coefficient, ": Month Coefficient for ", month, " (little table below)")
+            st.write(mcv, ": Month Coefficient for ", month, " (little table below)")
         
             # Step 6: Add the day of the month (continued)
             time.sleep(3)
-            st.write(day_of_month, ": Day of the month")
+            #st.write(day_of_month, ": Day of the month")
+            st.write(dom, ": Day of the month")
             
             # Step 7: Divide the subtotal by 7 and find the remainder (continued)
             #st.write(":point_right: Remainder after dividing ", subtotal, "  by 7:", remainder)
             time.sleep(3)
-            st.write(":point_right: Remainder after dividing the Magic Sum ", subtotal, "  by 7 ---> ", f"<span style='font-size:18px; font-weight:bold;'>{remainder}</span>", unsafe_allow_html=True)
+            #st.write(":point_right: Remainder after dividing the Magic Sum ", subtotal, "  by 7 ---> ", f"<span style='font-size:18px; font-weight:bold;'>{remainder}</span>", unsafe_allow_html=True)
+            st.write(":point_right: Remainder after dividing the Magic Sum ", sbt, **"  by 7 ---> "**, f"<span style='font-size:18px; font-weight:bold;'>rst</span>", unsafe_allow_html=True)
             
             # Display Correspondence Table
             time.sleep(3)
