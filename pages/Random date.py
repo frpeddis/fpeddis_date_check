@@ -112,8 +112,8 @@ if check_button:
         time.sleep(1)
         
         if selected_date:
-            description2 = "Focus on "
-            st.markdown(f"{description2} {value}")
+            #description2 = "Focus on "
+            #st.markdown(f"{description2} {value}")
 
 
             text = value
@@ -121,7 +121,7 @@ if check_button:
             
             t = st.empty()
             for i in range(len(text) + 1):
-                t.markdown("## %s..." % text[0:i])
+                t.markdown("## %s" % text[0:i])
                 time.sleep(0.2)
             
            
