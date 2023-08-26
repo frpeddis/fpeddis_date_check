@@ -168,8 +168,7 @@ if check_button:
             mcv = f"**:green[{month_coefficient}]**"
             dom = f"**:green[{day_of_month}]**"
             sbt = f"**:red[{subtotal}]**"
-            ctrvalue = "**" + century + "**"
-
+            
             
             #ctr = f"**green[{century}]**"
             #rst = f"**blue[{remainder}]**"
@@ -200,8 +199,8 @@ if check_button:
             # Step 4: Add the "Century Correction" (continued)
             time.sleep(3)
             #st.write(century_correction_value, ": Correction for century ", century, " (little table below)")
-            #st.write(ccv, ": Correction for century ", century, " (little table below)")
-            st.write(ccv, ": Correction for century ", ctrvalue, " (little table below)")
+            st.write(ccv, ": Correction for century ", century, " (little table below)")
+            
             # Step 5: Add the "Month Coefficient" (continued)
             time.sleep(3)
             #st.write(month_coefficient, ": Month Coefficient for ", month, " (little table below)")
