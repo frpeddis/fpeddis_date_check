@@ -163,7 +163,7 @@ if check_button:
             remainder = subtotal % 7
         
             # Display calculated string
-            time.sleep(1)
+            time.sleep(2)
             calculated_string = f"**:green[{year_last_2_digits}]** + **:green[{year_divided_by_4}]** + **:green[{century_correction_value}]** + **:green[{month_coefficient}]** + **:green[{day_of_month}]**"
             st.write(":point_right: Magic Sum: ", calculated_string, " = ", f"<span style='font-size:18px; font-weight:bold;'>{subtotal}</span>", unsafe_allow_html=True)
             
@@ -173,26 +173,32 @@ if check_button:
             
             
             # Step 2: Take the last 2 digits of the year (continued)
-            time.sleep(1)
+            time.sleep(3)
             st.write(year_last_2_digits, ": Last 2 digits of the year YY")
         
             # Step 3: Divide the year number by 4 and add it (continued)
+            time.sleep(3)
             st.write(year_divided_by_4, ": Last 2 digit of the year YY/4 (only integer part!)")
             
             # Step 4: Add the "Century Correction" (continued)
+            time.sleep(3)
             st.write(century_correction_value, ": Correction for century ", century, " (little table below)")
           
             # Step 5: Add the "Month Coefficient" (continued)
+            time.sleep(3)
             st.write(month_coefficient, ": Month Coefficient for ", month, " (little table below)")
         
             # Step 6: Add the day of the month (continued)
+            time.sleep(3)
             st.write(day_of_month, ": Day of the month")
             
             # Step 7: Divide the subtotal by 7 and find the remainder (continued)
             #st.write(":point_right: Remainder after dividing ", subtotal, "  by 7:", remainder)
+            time.sleep(3)
             st.write(":point_right: Remainder after dividing the Magic Sum ", subtotal, "  by 7 ---> ", f"<span style='font-size:18px; font-weight:bold;'>{remainder}</span>", unsafe_allow_html=True)
             
             # Display Correspondence Table
+            time.sleep(3)
             #st.write("Correspondence between Remainders and Days of the Week Table:")
             correspondence_table = {
                 "Remainder": list(range(7)),
@@ -206,10 +212,12 @@ if check_button:
                     formatted_correspondence_table.append([str(r), d])
             df_correspondence = pd.DataFrame(formatted_correspondence_table, columns=["Reminder", "Day of the week"])
             #st.write("Remainders and Days of the Week:")
+            time.sleep(3)
             st.dataframe(df_correspondence)
             
             
             # Display Century Correction Table
+            time.sleep(3)
             st.write("Century Correction")
             century_correction_table = {
                 "Century": [1500, 1600, 1700, 1800, 1900, 2000],
@@ -223,10 +231,12 @@ if check_button:
                     formatted_century_correction_table.append([str(century), str(correction)])
             df_century_correction = pd.DataFrame(formatted_century_correction_table, columns=["Century", "Correction"])
             #st.write("Century Correction Table:")
+            time.sleep(3)
             st.dataframe(df_century_correction)
         
             
             # Display Month Coefficient Table (continued)
+            time.sleep(3)
             st.write("Month Coefficient")
             month_coefficients = {
                 "January": 1 if not (selected_date.year % 4 == 0 and selected_date.month <= 2) else 0,
