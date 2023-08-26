@@ -27,4 +27,4 @@ st.subheader("With a little practice you can calculate it in your head... ")
 
 
  
-st.sidebar.success("Select your challenge ")
+#st.sidebar.success("Select your challenge ")
