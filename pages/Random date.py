@@ -188,8 +188,8 @@ if check_button:
             for i in range(len(text2) + 1):
                 t.markdown("## %s" % text2[0:i])
                 time.sleep(0.01)
-            st.markdown(" = " + sbt)
-            
+            #st.markdown(" = " + sbt)
+            st.subheader(" = " + sbt)
             
             # Step 2: Take the last 2 digits of the year (continued)
             time.sleep(3)
