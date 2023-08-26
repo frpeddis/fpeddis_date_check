@@ -21,6 +21,8 @@ for i in range(len(text) + 1):
     t.markdown("## %s" % text[0:i])
     time.sleep(0.05)
 
+time.sleep(0.2)
+
 st.subheader("With a little practice you can calculate it in your head... ") 
 
 
