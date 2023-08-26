@@ -161,11 +161,22 @@ if check_button:
         
             # Step 7: Divide the subtotal by 7 and find the remainder
             remainder = subtotal % 7
-        
+
+            yl2d = f"**:green[{year_last_2_digits}]**"
+            ydb4 = f"**:green[{year_divided_by_4}]**"
+
+            ccv = f"**:green[{century_correction_value}]**"
+            mcv = f"**:green[{month_coefficient}]**"
+            dom = f"**:green[{day_of_month}]**"
+            sbt = f"**:red[{subtotal}]**"
+            ctr = f"**green[{century}]**"
+            #rst = f"**green[{reminder}]**"
+            
             # Display calculated string
             time.sleep(2)
             calculated_string = f"**:green[{year_last_2_digits}]** + **:green[{year_divided_by_4}]** + **:green[{century_correction_value}]** + **:green[{month_coefficient}]** + **:green[{day_of_month}]**"
             st.write(":point_right: Magic Sum: ", calculated_string, " = ", f"<span style='font-size:18px; font-weight:bold;'>{subtotal}</span>", unsafe_allow_html=True)
+            st.write(":point_right: Magic Sum: ", calculated_string, " = ", sbt)
 
             
             
@@ -178,15 +189,7 @@ if check_button:
                 t.markdown("## %s" % text2[0:i])
                 time.sleep(0.01)
             
-            yl2d = f"**:green[{year_last_2_digits}]**"
-            ydb4 = f"**:green[{year_divided_by_4}]**"
-
-            ccv = f"**:green[{century_correction_value}]**"
-            mcv = f"**:green[{month_coefficient}]**"
-            dom = f"**:green[{day_of_month}]**"
-            sbt = f"**:red[{subtotal}]**"
-            ctr = f"**green[{century}]**"
-            #rst = f"**green[{reminder}]**"
+            
             
             # Step 2: Take the last 2 digits of the year (continued)
             time.sleep(3)
