@@ -169,7 +169,7 @@ if check_button:
             dom = f"**:green[{day_of_month}]**"
             sbt = f"**:red[{subtotal}]**"
             ctr = f"**green[{century}]**"
-            rst = f"**blue[{reminder}]**"
+            rst = f"**blue[{remainder}]**"
             
             # Display calculated string
             time.sleep(2)
