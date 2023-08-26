@@ -186,7 +186,7 @@ if check_button:
             dom = f"**:green[{day_of_month}]**"
             sbt = f"**:blue[{subtotal}]**"
             ctr = f"**green[{century}]**"
-            rst = f"**green[{reminder}]**"
+            #rst = f"**green[{reminder}]**"
             
             # Step 2: Take the last 2 digits of the year (continued)
             time.sleep(3)
@@ -215,7 +215,7 @@ if check_button:
             #st.write(":point_right: Remainder after dividing ", subtotal, "  by 7:", remainder)
             time.sleep(3)
             #st.write(":point_right: Remainder after dividing the Magic Sum ", subtotal, "  by 7 ---> ", f"<span style='font-size:18px; font-weight:bold;'>{remainder}</span>", unsafe_allow_html=True)
-            st.write(":point_right: Remainder after dividing the Magic Sum ", sbt, "  by 7 ---> ", f"<span style='font-size:18px; font-weight:bold;'>rst</span>", unsafe_allow_html=True)
+            st.write(":point_right: Remainder after dividing the Magic Sum ", sbt, "  by 7 ---> ", f"<span style='font-size:18px; font-weight:bold;'>{remainder}</span>", unsafe_allow_html=True)
             
             # Display Correspondence Table
             time.sleep(3)
