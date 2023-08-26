@@ -171,9 +171,9 @@ if check_button:
             
             
             t = st.empty()
-            for i in range(len(text) + 1):
+            for i in range(len(text2) + 1):
                 t.markdown("## %s" % text2[0:i])
-                time.sleep(0.3)
+                time.sleep(0.2)
             
             #calculated_string = f"{year_last_2_digits} + {year_divided_by_4} + {century_correction_value} + {month_coefficient} + {day_of_month}"
             #st.write(":point_right: Magic Sum: ", calculated_string, " = ", f"<span style='font-size:18px; font-weight:bold;'>{subtotal}</span>", unsafe_allow_html=True)
