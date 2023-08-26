@@ -107,10 +107,23 @@ if check_button:
         st.error(day_of_week + " is the right day! :coffee: That's why...")
         # Step 1: User selects a date
         selected_date = st.session_state.random_date
+
+
+        time.sleep(1)
         
         if selected_date:
             description2 = "Focus on "
             st.markdown(f"{description2} {value}")
+
+
+            text = value
+            
+            
+            t = st.empty()
+            for i in range(len(text) + 1):
+                t.markdown("## %s..." % text[0:i])
+                time.sleep(0.2)
+            
            
 
             # Step 2: Take the last 2 digits of the year
