@@ -184,7 +184,7 @@ if check_button:
             ccv = f"**:green[{century_correction_value}]**"
             mcv = f"**:green[{month_coefficient}]**"
             dom = f"**:green[{day_of_month}]**"
-            sbt = f"**:blue[{subtotal}]**"
+            sbt = f"**:purple[{subtotal}]**"
             ctr = f"**green[{century}]**"
             #rst = f"**green[{reminder}]**"
             
