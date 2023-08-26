@@ -164,30 +164,26 @@ if check_button:
 
             yl2d = f"**:green[{year_last_2_digits}]**"
             ydb4 = f"**:green[{year_divided_by_4}]**"
-
             ccv = f"**:green[{century_correction_value}]**"
             mcv = f"**:green[{month_coefficient}]**"
             dom = f"**:green[{day_of_month}]**"
             sbt = f"**:red[{subtotal}]**"
             ctr = f"**green[{century}]**"
-            #rst = f"**orange[{reminder}]**"
+            #rst = f"**blue[{reminder}]**"
             
             # Display calculated string
             time.sleep(2)
             calculated_string = f"**:green[{year_last_2_digits}]** + **:green[{year_divided_by_4}]** + **:green[{century_correction_value}]** + **:green[{month_coefficient}]** + **:green[{day_of_month}]** = **:red[{subtotal}]**"
             
-            
-            
             st.subheader("🔮 Magic Sum: ")
+
             text2 = calculated_string
-            
             
             t = st.empty()
             for i in range(len(text2) + 1):
                 t.markdown("## %s" % text2[0:i])
                 time.sleep(0.01)
             
-            #st.header(" = " + sbt)
             
             # Step 2: Take the last 2 digits of the year (continued)
             time.sleep(3)
