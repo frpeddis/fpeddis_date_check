@@ -123,7 +123,7 @@ if check_button:
             t = st.empty()
             for i in range(len(text) + 1):
                 t.markdown("## %s" % text[0:i])
-                time.sleep(0.2)
+                time.sleep(0.05)
             
            
 
@@ -184,7 +184,7 @@ if check_button:
             ccv = f"**:green[{century_correction_value}]**"
             mcv = f"**:green[{month_coefficient}]**"
             dom = f"**:green[{day_of_month}]**"
-            sbt = f"**:blue[{subtotal}]**"
+            sbt = f"**:purple[{subtotal}]**"
             ctr = f"**green[{century}]**"
             #rst = f"**green[{reminder}]**"
             
