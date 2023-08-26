@@ -180,7 +180,7 @@ if check_button:
 
             
             
-            
+            st.subheader(":point_down: Magic Sum: ")
             text2 = calculated_string
             
             
