@@ -175,12 +175,10 @@ if check_button:
             # Display calculated string
             time.sleep(2)
             calculated_string = f"**:green[{year_last_2_digits}]** + **:green[{year_divided_by_4}]** + **:green[{century_correction_value}]** + **:green[{month_coefficient}]** + **:green[{day_of_month}]** = **:red[{subtotal}]**"
-            #st.write(":point_right: Magic Sum: ", calculated_string, " = ", f"<span style='font-size:18px; font-weight:bold;'>{subtotal}</span>", unsafe_allow_html=True)
-            #st.write(":point_right: Magic Sum: ", calculated_string, " = ", sbt)
-
             
             
-            st.subheader("🪄 Magic Sum: ")
+            
+            st.subheader("🔮 Magic Sum: ")
             text2 = calculated_string
             
             
