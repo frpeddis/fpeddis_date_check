@@ -165,7 +165,7 @@ if check_button:
             yl2d = f"**:green[{year_last_2_digits}]**"
             ydb4 = f"**:green[{year_divided_by_4}]**"
 
-            ccv = f"**:orange[{century_correction_value}]**"
+            ccv = f"**:green[{century_correction_value}]**"
             mcv = f"**:green[{month_coefficient}]**"
             dom = f"**:green[{day_of_month}]**"
             sbt = f"**:red[{subtotal}]**"
@@ -218,7 +218,7 @@ if check_button:
             #st.write(":point_right: Remainder after dividing ", subtotal, "  by 7:", remainder)
             time.sleep(3)
             #st.write(":point_right: Remainder after dividing the Magic Sum ", subtotal, "  by 7 ---> ", f"<span style='font-size:18px; font-weight:bold;'>{remainder}</span>", unsafe_allow_html=True)
-            st.write(":point_right: **Remainder** after dividing the Magic Sum ", sbt, "  by 7 -> :point_right:", f"<span style='font-size:22px; font-weight:bold;'>{remainder}</span>", unsafe_allow_html=True)
+            st.write(":point_right: *Remainder* after dividing the Magic Sum ", sbt, "  by *7* -> :point_right:", f"<span style='font-size:22px; font-weight:bold;'>{remainder}</span>", unsafe_allow_html=True)
             
             
             # Display Correspondence Table
