@@ -179,7 +179,7 @@ if check_button:
                 time.sleep(0.01)
             
             yl2d = f"**:green[{year_last_2_digits}]**"
-            ydb4 = f"**:green[{year_divided_by_4}]**""
+            ydb4 = f"**:green[{year_divided_by_4}]**"
 
             ccv = f"**:green[{century_correction_value}]**"
             mcv = f"**:green[{month_coefficient}]**"
