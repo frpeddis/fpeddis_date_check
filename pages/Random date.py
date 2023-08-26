@@ -163,6 +163,7 @@ if check_button:
             remainder = subtotal % 7
         
             # Display calculated string
+            time.sleep(1)
             calculated_string = f"**:green[{year_last_2_digits}]** + **:green[{year_divided_by_4}]** + **:green[{century_correction_value}]** + **:green[{month_coefficient}]** + **:green[{day_of_month}]**"
             st.write(":point_right: Magic Sum: ", calculated_string, " = ", f"<span style='font-size:18px; font-weight:bold;'>{subtotal}</span>", unsafe_allow_html=True)
             
@@ -172,6 +173,7 @@ if check_button:
             
             
             # Step 2: Take the last 2 digits of the year (continued)
+            time.sleep(1)
             st.write(year_last_2_digits, ": Last 2 digits of the year YY")
         
             # Step 3: Divide the year number by 4 and add it (continued)
