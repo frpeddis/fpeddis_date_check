@@ -168,7 +168,8 @@ if check_button:
             mcv = f"**:green[{month_coefficient}]**"
             dom = f"**:green[{day_of_month}]**"
             sbt = f"**:red[{subtotal}]**"
-            ctr = f"**green[{century}]**"
+            ctr = century
+            #ctr = f"**green[{century}]**"
             #rst = f"**blue[{remainder}]**"
             
             # Display calculated string
