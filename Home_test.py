@@ -13,7 +13,7 @@ com.iframe("https://lottie.host/?file=5a47a9d0-e7b0-492a-a32c-dd53d0fbfd5b/NaMYq
 st.title("Welcome!!!  :sunglasses:")
 #st.header("Guess the **weekday** for **any date!**")
 
-text = "Guess the *weekday* for *any date!*"
+text = "Guess the weekday for any date!"
 
 
 t = st.empty()
