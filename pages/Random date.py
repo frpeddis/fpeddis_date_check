@@ -102,9 +102,10 @@ if check_button:
         st.success(day_of_week + " is OK! :thumbsup:")
                 
     else:
-        st.error(day_of_week + " is the right day! :coffee: That's why...")
+        
         com.iframe("https://lottie.host/?file=380d3ff9-0c30-4a96-b25b-7eeb8868bfeb/vnvhMZFQ8j.json")
-                # Step 1: User selects a date
+        st.error(day_of_week + " is the right day! :coffee: That's why...")
+        # Step 1: User selects a date
         selected_date = st.session_state.random_date
         
         if selected_date:
