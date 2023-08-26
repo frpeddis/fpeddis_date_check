@@ -200,7 +200,7 @@ if check_button:
             # Step 4: Add the "Century Correction" (continued)
             time.sleep(3)
             #st.write(century_correction_value, ": Correction for century ", century, " (little table below)")
-            st.write(ccv, ": Correction for century ", ctr, " (little table below)")
+            st.write(ccv, ": Correction for century ", century, " (little table below)")
             # Step 5: Add the "Month Coefficient" (continued)
             time.sleep(3)
             #st.write(month_coefficient, ": Month Coefficient for ", month, " (little table below)")
