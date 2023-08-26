@@ -169,7 +169,7 @@ if check_button:
             dom = f"**:green[{day_of_month}]**"
             sbt = f"**:red[{subtotal}]**"
             ctr = f"**green[{century}]**"
-            rst = f"**blue[{remainder}]**"
+            #rst = f"**blue[{remainder}]**"
             
             # Display calculated string
             time.sleep(2)
@@ -193,7 +193,7 @@ if check_button:
             # Step 3: Divide the year number by 4 and add it (continued)
             time.sleep(3)
             #st.write(year_divided_by_4, ": Last 2 digit of the year YY/4 (only integer part!)")
-            st.write(ydb4, ": Last 2 digit of the year YY**/4** (only integer part!)")            
+            st.write(ydb4, ": Last 2 digit of the year divided by 4 (YY/4 only integer part!)")            
             # Step 4: Add the "Century Correction" (continued)
             time.sleep(3)
             #st.write(century_correction_value, ": Correction for century ", century, " (little table below)")
@@ -213,7 +213,7 @@ if check_button:
             time.sleep(3)
             #st.write(":point_right: Remainder after dividing the Magic Sum ", subtotal, "  by 7 ---> ", f"<span style='font-size:18px; font-weight:bold;'>{remainder}</span>", unsafe_allow_html=True)
             st.write("🙌 **Remainder** after dividing the **Magic Sum** ", sbt, "  / **7** -> :point_right:", f"<span style='font-size:23px; font-weight:bold;'>{remainder}</span>", unsafe_allow_html=True)
-            st.markdown(rst)
+           
             
             # Display Correspondence Table
             time.sleep(3)
