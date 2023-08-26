@@ -167,6 +167,9 @@ if check_button:
             calculated_string = f"**:green[{year_last_2_digits}]** + **:green[{year_divided_by_4}]** + **:green[{century_correction_value}]** + **:green[{month_coefficient}]** + **:green[{day_of_month}]**"
             st.write(":point_right: Magic Sum: ", calculated_string, " = ", f"<span style='font-size:18px; font-weight:bold;'>{subtotal}</span>", unsafe_allow_html=True)
 
+            
+            
+            
             text2 = calculated_string
             
             
@@ -175,14 +178,14 @@ if check_button:
                 t.markdown("## %s" % text2[0:i])
                 time.sleep(0.01)
             
-            #calculated_string = f"{year_last_2_digits} + {year_divided_by_4} + {century_correction_value} + {month_coefficient} + {day_of_month}"
-            #st.write(":point_right: Magic Sum: ", calculated_string, " = ", f"<span style='font-size:18px; font-weight:bold;'>{subtotal}</span>", unsafe_allow_html=True)
-            #st.write("Magic Sum: ", calculated_string, " = ", subtotal)
+            yltd = f"**:green[{year_last_2_digits}]**"
+            
             
             
             # Step 2: Take the last 2 digits of the year (continued)
             time.sleep(3)
             st.write(year_last_2_digits, ": Last 2 digits of the year YY")
+            st.write(yltd, ": Last 2 digits of the year YY")
         
             # Step 3: Divide the year number by 4 and add it (continued)
             time.sleep(3)
