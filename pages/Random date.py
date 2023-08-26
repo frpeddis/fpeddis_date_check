@@ -218,7 +218,7 @@ if check_button:
             #st.write(":point_right: Remainder after dividing ", subtotal, "  by 7:", remainder)
             time.sleep(3)
             #st.write(":point_right: Remainder after dividing the Magic Sum ", subtotal, "  by 7 ---> ", f"<span style='font-size:18px; font-weight:bold;'>{remainder}</span>", unsafe_allow_html=True)
-            st.write(":point_right: Remainder after dividing the Magic Sum ", sbt, "  by 7 ---> ", f"<span style='font-size:22px; font-weight:bold;'>{remainder}</span>", unsafe_allow_html=True)
+            st.write(":point_right: **Remainder after dividing the Magic Sum **", sbt, "  **by 7 ---> **", f"<span style='font-size:22px; font-weight:bold;'>{remainder}</span>", unsafe_allow_html=True)
             
             
             # Display Correspondence Table
