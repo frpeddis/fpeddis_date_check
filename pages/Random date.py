@@ -169,7 +169,7 @@ if check_button:
             dom = f"**:green[{day_of_month}]**"
             sbt = f"**:red[{subtotal}]**"
             ctr = f"**green[{century}]**"
-            #rst = f"**blue[{reminder}]**"
+            rst = f"**blue[{reminder}]**"
             
             # Display calculated string
             time.sleep(2)
@@ -212,8 +212,8 @@ if check_button:
             #st.write(":point_right: Remainder after dividing ", subtotal, "  by 7:", remainder)
             time.sleep(3)
             #st.write(":point_right: Remainder after dividing the Magic Sum ", subtotal, "  by 7 ---> ", f"<span style='font-size:18px; font-weight:bold;'>{remainder}</span>", unsafe_allow_html=True)
-            st.write(":point_right: **Remainder** after dividing the **Magic Sum** ", sbt, "  by **7** -> :point_right:", f"<span style='font-size:23px; font-weight:bold;'>{remainder}</span>", unsafe_allow_html=True)
-            
+            st.write(":point_right: **Remainder** after dividing the **Magic Sum** ", sbt, "  / **7** -> :point_right:", f"<span style='font-size:23px; font-weight:bold;'>{remainder}</span>", unsafe_allow_html=True)
+            st.subheader(rst)
             
             # Display Correspondence Table
             time.sleep(3)
