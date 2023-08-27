@@ -11,6 +11,7 @@ st.subheader("↖️ Your Calendar Challenge on the upper left sidebar")
 #com.iframe("https://lottie.host/?file=5a47a9d0-e7b0-492a-a32c-dd53d0fbfd5b/NaMYqV899B.json")
  
 com.iframe("https://lottie.host/?file=90eeda85-77c8-40c8-8ca0-975987488dd9/p88GhLxUZM.json")
+
 st.title("Welcome!!!  :sunglasses:")
 #st.header("Guess the **weekday** for **any date!**")
 
