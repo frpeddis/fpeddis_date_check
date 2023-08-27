@@ -17,7 +17,6 @@ st.title("Welcome!!!  :sunglasses:")
 
 text = "Guess the weekday for any date!"
 
-
 t = st.empty()
 for i in range(len(text) + 1):
     t.markdown("## %s" % text[0:i])
